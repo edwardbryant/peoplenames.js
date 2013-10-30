@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Examples for Names.js</title>
+<script>
+
+function example(){
+
+	var x = new Name("Edward","Butterworth","Scissorhands");
+	console.log(x.getName("first"));
+	console.log(x.getName("middle"));
+	console.log(x.getName("last"));
+	console.log(x.getName("f"));
+	console.log(x.getName("m"));
+	console.log(x.getName("l"));
+
+
+	console.log(x.getName("fml"));
+	console.log(x.getName("f-m-last"));
+	console.log(x.getName("first-middle-last"));
+	console.log(x.getName("last"));
+
+}
+</script>	
+</head>
+<body>
+<div onload="example()">
+<h1>Examples</h1>
+<a href="#" onclick="example()">CLICK HERE</a>
+
+<div id="example1"></div>
+<div id="example2"></div>
+<div id="example3"></div>
+
+
+</div>
+<script src="peoplenames.js"></script>
+</body>
+</html>
