@@ -15,21 +15,21 @@ ex., [var me = new Name("Firstus","Middleton","Lastingson");]
 
 You can then get the name back in the desired format: 
 
-me.getName("first"); # "Firstus"
-me.getName("middle"); # "Middleton"
-me.getName("last"); # "Lastingson"
-me.getName("f"); # "F."
-me.getName("m"); # "M."
-me.getName("l"); # "L."
-me.getName("first-last"); # "Firstus Lastington"
-me.getName("last-first"); # "Lastington, Firstus"
-me.getName("first-middle-last"); # "Firstus Middleton Lastington"
-me.getName("first-m-last"); # "Firstus M. Lastington"
-me.getName("f-m-last"); # "F. M. Lastington"
-me.getName("f-last"); # "F. Lastington"
-me.getName("fm-last"); # "F.M. Lastington"
-me.getName("f-m-l"); # "F. M. L."
-me.getName("fml"); # "F.M.L."
+- me.getName("first"); # "Firstus"
+- me.getName("middle"); # "Middleton"
+- me.getName("last"); # "Lastingson"
+- me.getName("f"); # "F."
+- me.getName("m"); # "M."
+- me.getName("l"); # "L."
+- me.getName("first-last"); # "Firstus Lastington"
+- me.getName("last-first"); # "Lastington, Firstus"
+- me.getName("first-middle-last"); # "Firstus Middleton Lastington"
+- me.getName("first-m-last"); # "Firstus M. Lastington"
+- me.getName("f-m-last"); # "F. M. Lastington"
+- me.getName("f-last"); # "F. Lastington"
+- me.getName("fm-last"); # "F.M. Lastington"
+- me.getName("f-m-l"); # "F. M. L."
+- me.getName("fml"); # "F.M.L."
 
 PLANNED FEATURES
 
