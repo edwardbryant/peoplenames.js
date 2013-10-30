@@ -1,15 +1,4 @@
 
-// name object with a set of functions 
-
-// to do items:
-//
-// intercalation ("van" "de" etc.)
-// suffix ("II" "Jr.")
-// nick names ("Lefty")
-// display name  
-// maiden name 
-
-
 var Name = function(first,middle,last){
 
 	var first = first;
@@ -61,24 +50,15 @@ var Name = function(first,middle,last){
 			case "fml":
 				return first.substring(0,1)+"."+middle.substring(0,1)+"."+last.substring(0,1)+".";
 				break;
+			case "f-m-l":
+				return first.substring(0,1)+"."+" "+middle.substring(0,1)+"."+" "+last.substring(0,1)+".";
+				break;
 			default:
 				return first+" "+middle.substring(0,1)+"."+" "+last;
 				break;	
 		}
 	};
 
-/*	
-	// display name
-	this.display = this.first-m-last; // default 
-	this.setDisplayFull = function(){
-		this.display = this.full;
-	};
-	this.setDisplayDefault = function(){
-		this.display = this.first-m-last; 
-	};
-	this.setDisplayShort = function(){
-		this.display = this.short;
-	};
 	
-	*/
+	
 };
