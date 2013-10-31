@@ -5,9 +5,10 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<title>Examples for Names.js</title>
+<title>PeopleNames.js - Documentation</title>
 <script>
 function example(){
+
 	var ex = new Name("Edward","Montgomery","Proudfoot");
 
 	document.getElementById("f").innerHTML=ex.getName("f");
@@ -35,23 +36,25 @@ function example(){
 	document.getElementById("last-first-middle").innerHTML=ex.getName("last-first-middle");
 	document.getElementById("last-first-m").innerHTML=ex.getName("last-first-m");
 
+	document.getElementById("display1").innerHTML=ex.getDisplay();
+	ex.setDisplay("first-middle-last");
+	document.getElementById("display2").innerHTML=ex.getDisplay();
+	
 }
 </script>	
 </head>
 <body onload="example()">
 <div class="container">
-<h1>PeopleNames.js - Examples</h1>
+<h1>PeopleNames.js Documentation</h1>
+
 <br>
-<h3>The Basics</h3>
+
+<h3>The Basics &middot; Object Creation &amp; getName()</h3>
 <div class="well">
 <p>Create an object and supply three params (1) first name, (2) middle name, and (3) last name.</p>
-
 <blockquote><span style="color:blue;">dude = new Name("Edward","Montgomery","Proundfoot");</span></blockquote>
-
 <p>You can then use the getName() method and supply a designated "type" as a param (see types below) to retrieve the name in your desired format.</p> 
-
 <blockquote><span style="color:blue;">str = dude.getName(</span>type<span style="color:blue;">);</span></blockquote>
-
 <p>Types are a text string that uses single letters for initials (e.g., "f" for a first initial only), full words for spelled out words (e.g., "first-m-last" for first name and last name separated by an initial), and hyphens to designate spaces (e.g., "f-m-last" for last name preceded by initials but "fm-last" for same without space between initials). The following types are currently implemented:</p>
 <ul>
 <li><p>"f" ( <span id="f" style="color:green;"></span> )</p></li>
@@ -74,8 +77,20 @@ function example(){
 <li><p>"last-first-middle" ( <span id="last-first-middle" style="color:green;"></span> )</p></li>
 <li><p>"last-first-m" ( <span id="last-first-m" style="color:green;"></span> )</p></li>
 </ul>
-
 </div>
+
+<br>
+
+<h3>Display Name</h3>
+<div class="well">
+<p>xxx</p>
+<blockquote><span id="display1"></span></blockquote>
+<p>xxx</p>
+<blockquote><span id="display2"></span></blockquote>
+</div>
+
+<br>
+
 </div>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>

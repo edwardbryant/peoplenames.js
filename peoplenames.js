@@ -1,13 +1,26 @@
 
-var Name = function(first,middle,last){
+var Name = function(a,b,c){
 
-	var first = first;
-	var middle = middle;
-	var last = last;
+	if(typeof a == 'string' || a instanceof String){
+		var first = a;
+	} else {
+		var first = "";
+	}
+
+	if(typeof b == 'string' || b instanceof String){
+		var middle = b;
+	} else {
+		var middle = "";
+	}
+
+	if(typeof c == 'string' || c instanceof String){
+		var last = c;
+	} else {
+		var last = "";
+	}
 	
 	this.getName = function(type){
-		if ((typeof first == 'string' || first instanceof String) && (typeof middle == 'string' || middle instanceof String) && (typeof last == 'string' || last instanceof String)){
-			switch(type){
+		switch(type){
 			case "f":
 				return first.substring(0,1)+".";
 				break;
@@ -68,16 +81,27 @@ var Name = function(first,middle,last){
 			default:
 				return first+" "+middle.substring(0,1)+"."+" "+last;
 				break;	
-			}
 		}
 	};
 	
 	var display = this.getName();
 
 	this.getDisplay = function(){ return display; };
-
+	
 	this.setDisplay = function(type){
 		display = this.getName(type);
 	};
+
+	this.getLength = function(type){
+		var str = this.getName();
+		return str.length();
+	};
+
+
+
+
+
+
+
 	
 };

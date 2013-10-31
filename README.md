@@ -3,45 +3,37 @@ peoplenames.js
 
 a detailed JS object with methods for manipulating the names of people.
 
+created 10/30/2013
+
 PURPOSE
 
 In some situations, you may be required to manipulate the names of people in a very detailed manner (e.g., family tree web app, etc.) and this object and accompanying methods are designed to be a utility for making those tasks easier.  
 
-CURRENT USAGE
+DOCUMENTATION 
 
-Create an object and supply a first name, middle name, and last name:
+The most up-to-date version of the documentation can be found in documentation.html (url) which is also included with the files.
 
-ex., [var me = new Name("Firstus","Middleton","Lastingson");] 
+EXAMPLE USAGE
 
-You can then get the name back in the desired format: 
+dude = new Name("Edward","Montgomery","Proudfoot"); // create obj
 
-- me.getName("first"); # "Firstus"
-- me.getName("middle"); # "Middleton"
-- me.getName("last"); # "Lastingson"
-- me.getName("f"); # "F."
-- me.getName("m"); # "M."
-- me.getName("l"); # "L."
-- me.getName("first-last"); # "Firstus Lastington"
-- me.getName("last-first"); # "Lastington, Firstus"
-- me.getName("first-middle-last"); # "Firstus Middleton Lastington"
-- me.getName("first-m-last"); # "Firstus M. Lastington"
-- me.getName("f-m-last"); # "F. M. Lastington"
-- me.getName("f-last"); # "F. Lastington"
-- me.getName("fm-last"); # "F.M. Lastington"
-- me.getName("f-m-l"); # "F. M. L."
-- me.getName("fml"); # "F.M.L."
+initials = dude.getName("f-last"); // returns str with first initial and last name "E. Proudfoot" 
 
-PLANNED FEATURES
+reverse = dude.getName("last-first"); // returns str of name in reverse order "Proudfoot, Edward"  
 
-I expect to add the following features:
+See the documentation for a complete list of methods and available format types.
 
-- type / null testing and validation
+FUTURE PLANS
+
+I number of additional features (beyond name formatting) are planned, including:
+
 - display name property for designating a default string value 
 - suffix usage (e.g., "II" "Jr.")
 - maiden names 
 - nicknames
-- intercalation (e.g., "van" "de" etc.)  
-- incomplete names
+- intercalation (e.g., "van" "de" etc.)
+- incomplete names (missing name components) 
 - anonymous names (e.g., "living Smith" "[redacted] Smith")
-- international / foreign naming conventions, lexical order (e.g., East Asian / Western Ordering 
-
+- international / foreign naming conventions, lexical order (e.g., East Asian / Western ordering) 
+- name length method
+- capitalization settings
