@@ -42,6 +42,6 @@ I expect to add the following features:
 - nicknames
 - intercalation (e.g., "van" "de" etc.)  
 - incomplete names
-- anonymous names (e.g., "living Smith" "[redacted] Smith")  
-
+- anonymous names (e.g., "living Smith" "[redacted] Smith")
+- international / foreign naming conventions, lexical order (e.g., East Asian / Western Ordering 
 
