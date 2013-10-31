@@ -11,7 +11,7 @@ In some situations, you may be required to manipulate the names of people in a v
 
 DOCUMENTATION 
 
-The most up-to-date version of the documentation can be found in documentation.html (url) which is also included with the files.
+The most up-to-date version of the documentation can be found in documentation.html which is included with the files.
 
 EXAMPLE USAGE
 
@@ -37,3 +37,7 @@ I number of additional features (beyond name formatting) are planned, including:
 - international / foreign naming conventions, lexical order (e.g., East Asian / Western ordering) 
 - name length method
 - capitalization settings
+
+LICENSE
+
+PeopleNames.js is licensed under the MIT license.
