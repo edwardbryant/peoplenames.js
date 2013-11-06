@@ -1,17 +1,10 @@
-
 /*
-
 PeopleNames.js
 --------------
-created: 2013-10-31
-updated: 2013-11-06
-
+VER: na 
 LIC: PeopleNames.js is licensed under the MIT license.
-
 */
-
 var Name = function(firstGiven,secondGiven,surname){
-
 	this.setFirstGiven(firstGiven);
 	this.setSecondGiven(secondGiven);
 	this.setThirdGiven("");
@@ -19,15 +12,17 @@ var Name = function(firstGiven,secondGiven,surname){
 	this.setSurname(surname);
 	this.setSuffix("");
 	this.setDisplay("first-m-last");
-	
+	this.setNickname("");
 	this.isComplete = false;
 	this.isMononymous = false;
-	
 	this.isWesternOrder = true;
 	this.isEasternOrder = false;
-	
+	this.setAnonymizedText("[redacted]"); 
+	this.anonymizeFirstGiven = false;
+	this.anonymizeSecondGiven = false;
+	this.anonymizeThirdGiven = false;
+	this.anonymizeFourthGiven = false;
 };
-
 Name.prototype.getName = function(type){
 	switch(type){
 		case "f":
@@ -95,7 +90,9 @@ Name.prototype.getName = function(type){
 			break;	
 	}
 };
-
+Name.prototype.setId = function(id){
+	this.id = id;
+};
 Name.prototype.setFirstGiven = function(name){
 	this.hasFirstGiven = false;
 	this.firstGiven = "";
@@ -106,7 +103,6 @@ Name.prototype.setFirstGiven = function(name){
 		}
 	}	
 };
-
 Name.prototype.setSecondGiven = function(name){
 	this.hasSecondGiven = false;
 	this.secondGiven = "";
@@ -117,7 +113,6 @@ Name.prototype.setSecondGiven = function(name){
 		}
 	}	
 };
-
 Name.prototype.setThirdGiven = function(name){
 	this.hasThirdGiven = false;
 	this.thirdGiven = "";
@@ -128,7 +123,6 @@ Name.prototype.setThirdGiven = function(name){
 		}
 	}	
 };
-
 Name.prototype.setFourthGiven = function(name){
 	this.hasFourthGiven = false;
 	this.fourthGiven = "";
@@ -139,7 +133,6 @@ Name.prototype.setFourthGiven = function(name){
 		}
 	}	
 };
-
 Name.prototype.setSurname = function(name){
 	this.hasSurname = false;
 	this.surname = "";
@@ -150,7 +143,6 @@ Name.prototype.setSurname = function(name){
 		}
 	}	
 };
-
 Name.prototype.setSuffix = function(name){
 	this.hasSuffix = false;
 	this.suffix = "";
@@ -161,8 +153,48 @@ Name.prototype.setSuffix = function(name){
 		}
 	}	
 };
-
 Name.prototype.setDisplay = function(type){
 	this.display = this.getName(type);
 };
-
+Name.prototype.setNickname = function(name){
+	this.hasNickname = false;
+	this.nickname = "";
+	if(typeof name == 'string' || name instanceof String){
+		if (name.length > 0){
+			this.hasNickname = true;
+			this.nickname = name;
+		}
+	}	
+};
+Name.prototype.setAnonymizedText = function(name){
+	this.anonymizedText = "";
+	if(typeof name == 'string' || name instanceof String){
+		this.anonymizedText = name;
+	}	
+};
+Name.prototype.anonymizeFirstGiven = function(name){
+	this.anonymizeFirstGiven = true;
+	this.FirstGiven = this.AnonymizedText;
+};
+Name.prototype.anonymizeSecondGiven = function(name){
+	this.anonymizeSecondGiven = true;
+	this.SecondGiven = this.AnonymizedText;
+};
+Name.prototype.anonymizeThirdGiven = function(name){
+	this.anonymizeThirdGiven = true;
+	this.ThirdGiven = this.AnonymizedText;
+};
+Name.prototype.anonymizeFourthGiven = function(name){
+	this.anonymizeFourthGiven = true;
+	this.FourthGiven = this.AnonymizedText;
+};
+Name.prototype.anonymizeAllGiven = function(name){
+	this.anonymizeFirstGiven = true;
+	this.FirstGiven = this.AnonymizedText;
+	this.anonymizeSecondGiven = true;
+	this.SecondGiven = this.AnonymizedText;
+	this.anonymizeThirdGiven = true;
+	this.ThirdGiven = this.AnonymizedText;
+	this.anonymizeFourthGiven = true;
+	this.FourthGiven = this.AnonymizedText;
+};
