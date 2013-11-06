@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<title>PeopleNames.js - Documentation</title>
+<script>
+function example(){
+
+	var ex = new Name("Edward","Montgomery","Proudfoot");
+
+	document.getElementById("first-given").innerHTML=ex.hasFirstGiven +" - "+ ex.firstGiven;
+	document.getElementById("second-given").innerHTML=ex.hasSecondGiven +" - "+ ex.secondGiven;
+	document.getElementById("third-given").innerHTML=ex.hasThirdGiven +" - "+ ex.thirdGiven;
+	document.getElementById("fourth-given").innerHTML=ex.hasFourthGiven +" - "+ ex.fourthGiven;
+	document.getElementById("surname").innerHTML=ex.hasSurname +" - "+ ex.surname;
+	document.getElementById("suffix").innerHTML=ex.hasSuffix +" - "+ ex.suffix;
+	document.getElementById("complete").innerHTML=ex.isComplete;
+	document.getElementById("mononymous").innerHTML=ex.isMononymous;
+	document.getElementById("western-order").innerHTML=ex.isWesternOrder;
+	document.getElementById("eastern-order").innerHTML=ex.isEasternOrder;
+	
+	document.getElementById("default").innerHTML=ex.getName();
+	document.getElementById("f").innerHTML=ex.getName("f");
+	document.getElementById("f-last").innerHTML=ex.getName("f-last");
+	document.getElementById("flast").innerHTML=ex.getName("flast");
+	document.getElementById("f-middle-last").innerHTML=ex.getName("f-middle-last");
+	document.getElementById("f-m-last").innerHTML=ex.getName("f-m-last");
+	document.getElementById("fm-last").innerHTML=ex.getName("fm-last");
+	document.getElementById("fml").innerHTML=ex.getName("fml");
+	document.getElementById("f-m-l").innerHTML=ex.getName("f-m-l");
+	document.getElementById("m").innerHTML=ex.getName("m");
+	document.getElementById("l").innerHTML=ex.getName("l");
+	document.getElementById("first").innerHTML=ex.getName("first");
+	document.getElementById("first-last").innerHTML=ex.getName("first-last");
+	document.getElementById("first-middle-last").innerHTML=ex.getName("first-middle-last");
+	document.getElementById("first-m-last").innerHTML=ex.getName("first-m-last");
+	document.getElementById("middle").innerHTML=ex.getName("middle");
+	document.getElementById("last").innerHTML=ex.getName("last");
+	document.getElementById("last-first").innerHTML=ex.getName("last-first");
+	document.getElementById("last-first-middle").innerHTML=ex.getName("last-first-middle");
+	document.getElementById("last-first-m").innerHTML=ex.getName("last-first-m");
+	document.getElementById("display").innerHTML=ex.getName("display");
+
+	ex.setDisplay("fml");
+	document.getElementById("display2").innerHTML=ex.getName("display");
+	
+}
+</script>	
+</head>
+<body onload="example()">
+<div class="container">
+<h1>PeopleNames.js Testing Doc</h1>
+<div class="well">
+<blockquote><span style="color:blue;">ex = new Name("Edward","Montgomery","Proundfoot");</span></blockquote>
+
+<ul>
+<li><p>ex.hasFirstGiven / ex.firstGiven ( <span id="first-given" style="color:green;"></span> )</p></li>
+<li><p>ex.hasSecondGiven / ex.secondGiven ( <span id="second-given" style="color:green;"></span> )</p></li>
+<li><p>ex.hasThirdGiven / ex.thirdGiven ( <span id="third-given" style="color:green;"></span> )</p></li>
+<li><p>ex.hasFourthGiven / ex.fourthGiven ( <span id="fourth-given" style="color:green;"></span> )</p></li>
+<li><p>ex.hasSurname / ex.surname ( <span id="surname" style="color:green;"></span> )</p></li>
+<li><p>ex.hasSuffix / ex.suffix ( <span id="suffix" style="color:green;"></span> )</p></li>
+<li><p>ex.isComplete ( <span id="complete" style="color:green;"></span> )</p></li>
+<li><p>ex.isMononymous ( <span id="mononymous" style="color:green;"></span> )</p></li>
+<li><p>ex.isWesternOrder ( <span id="western-order" style="color:green;"></span> )</p></li>
+<li><p>ex.isEasternOrder ( <span id="eastern-order" style="color:green;"></span> )</p></li>
+</ul>
+
+<hr>
+
+<ul>
+<li><p>ex.getName(); ( <span id="default" style="color:green;"></span> )</p></li>
+<li><p>"f" ( <span id="f" style="color:green;"></span> )</p></li>
+<li><p>"f-last" ( <span id="f-last" style="color:green;"></span> )</p></li>
+<li><p>"flast" ( <span id="flast" style="color:green;"></span> )</p></li>
+<li><p>"f-middle-last" ( <span id="f-middle-last" style="color:green;"></span> )</p></li>
+<li><p>"f-m-last" ( <span id="f-m-last" style="color:green;"></span> )</p></li>
+<li><p>"fm-last" ( <span id="fm-last" style="color:green;"></span> )</p></li>
+<li><p>"fml" ( <span id="fml" style="color:green;"></span> )</p></li>
+<li><p>"f-m-l" ( <span id="f-m-l" style="color:green;"></span> )</p></li>
+<li><p>"m" ( <span id="m" style="color:green;"></span> )</p></li>
+<li><p>"l" ( <span id="l" style="color:green;"></span> )</p></li>
+<li><p>"first" ( <span id="first" style="color:green;"></span> )</p></li>
+<li><p>"first-last" ( <span id="first-last" style="color:green;"></span> )</p></li>
+<li><p>"first-middle-last" ( <span id="first-middle-last" style="color:green;"></span> )</p></li>
+<li><p>"first-m-last" ( <span id="first-m-last" style="color:green;"></span> )</p></li>
+<li><p>"middle" ( <span id="middle" style="color:green;"></span> )</p></li>
+<li><p>"last" ( <span id="last" style="color:green;"></span> )</p></li>
+<li><p>"last-first" ( <span id="last-first" style="color:green;"></span> )</p></li>
+<li><p>"last-first-middle" ( <span id="last-first-middle" style="color:green;"></span> )</p></li>
+<li><p>"last-first-m" ( <span id="last-first-m" style="color:green;"></span> )</p></li>
+<li><p>"display" ( <span id="display" style="color:green;"></span> )</p></li>
+</ul>
+
+<hr>
+
+<ul>
+<li><p>setDisplay("fml") and get again ( <span id="display2" style="color:green;"></span> )</p></li>
+</ul>
+
+<hr>
+
+</div>
+<br>
+
+</div>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="peoplenames.js"></script>
+</body>
+</html>

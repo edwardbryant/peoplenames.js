@@ -34,8 +34,7 @@ I number of additional features (beyond name formatting) are planned, including:
 - intercalation (e.g., "van" "de" etc.)
 - incomplete names (missing name components) 
 - anonymous names (e.g., "living Smith" "[redacted] Smith")
-- international / foreign naming conventions, lexical order (e.g., East Asian / Western ordering) 
-- name length method
+- foreign lexical ordering (e.g., Eastern vs. Western ordering) 
 - capitalization settings
 
 LICENSE

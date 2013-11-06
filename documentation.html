@@ -11,6 +11,8 @@ function example(){
 
 	var ex = new Name("Edward","Montgomery","Proudfoot");
 
+	document.getElementById("default").innerHTML=ex.getName();
+	
 	document.getElementById("f").innerHTML=ex.getName("f");
 	document.getElementById("f-last").innerHTML=ex.getName("f-last");
 	document.getElementById("flast").innerHTML=ex.getName("flast");
@@ -35,10 +37,6 @@ function example(){
 	document.getElementById("last-first").innerHTML=ex.getName("last-first");
 	document.getElementById("last-first-middle").innerHTML=ex.getName("last-first-middle");
 	document.getElementById("last-first-m").innerHTML=ex.getName("last-first-m");
-
-	document.getElementById("display1").innerHTML=ex.getDisplay();
-	ex.setDisplay("first-middle-last");
-	document.getElementById("display2").innerHTML=ex.getDisplay();
 	
 }
 </script>	
@@ -49,13 +47,42 @@ function example(){
 
 <br>
 
-<h3>The Basics &middot; Object Creation &amp; getName()</h3>
+<h3>Object Creation</h3>
 <div class="well">
-<p>Create an object and supply three params (1) first name, (2) middle name, and (3) last name.</p>
+<p>Create an object and supply three params (1) first given name, (2) second given name, and (3) surname.</p>
 <blockquote><span style="color:blue;">dude = new Name("Edward","Montgomery","Proundfoot");</span></blockquote>
-<p>You can then use the getName() method and supply a designated "type" as a param (see types below) to retrieve the name in your desired format.</p> 
+</div>
+
+<h3>Object Properties</h3>
+<div class="well">
+<p>[NOTE: the object properties listed here are those currently only accessible during development. Some properties may not be in active use.]</p>
+<ul>
+<li><p><em>hasFirstGiven</em> &middot; boolean on whether <em>firstGiven</em> has been set with a string greater than 0. Set during object creation.</p></li>
+<li><p><em>firstGiven</em> &middot; string of first given name.</p></li>
+<li><p><em>hasSecondGiven</em> &middot; boolean on whether <em>secondGiven</em> has been set with a string greater than 0. Set during object creation.</p></li>
+<li><p><em>secondGiven</em> &middot; string of second given name.</p></li>
+<li><p><em>hasThirdGiven</em> &middot; boolean on whether <em>thirdGiven</em> has been set with a string greater than 0. default is false.</p></li>
+<li><p><em>thirdGiven</em> &middot; string of third given name.</p></li>
+<li><p><em>hasFourthGiven</em> &middot; boolean on whether <em>fourthGiven</em> has been set with a string greater than 0. default is false.</p></li>
+<li><p><em>fourthGiven</em> &middot; string of fourth given name.</p></li>
+<li><p><em>hasSurname</em> &middot; boolean on whether <em>surname</em> has been set with a string greater than 0. Set during object creation.</p></li>
+<li><p><em>surname</em> &middot; string of surname (i.e., family name).</p></li>
+<li><p><em>hasSurname</em> &middot; boolean on whether <em>suffix</em> has been set with a string greater than 0. Set during object creation.</p></li>
+<li><p><em>suffix</em> &middot; string of name suffix (e.g., "Jr.", "Sr.", and ordinals such as "II").</p></li>
+<li><p><em>isComplete</em> &middot; boolean on whether the name elements which have been set comprise the complete name information. default is false.</p></li>
+<li><p><em>isMononymous</em> &middot; boolean on whether the person is represented by a single name (e.g., "Plato", "Cher"). default is false.</p></li>
+<li><p><em>isWesternOrder</em> &middot; boolean on whether western lexical ordering is to be used for return values. default is true.</p></li>
+<li><p><em>isEasternOrder</em> &middot; boolean on whether eastern lexical ordering is to be used for return values. default is false.</p></li>
+</ul>
+</div>
+
+<h3>The <em>GetName</em> Method</h3>
+<div class="well">
+<p>Calling the <em>getName</em> method without any params returns a default display name formatted as first and last name, separated by a middle initial</p>
+<blockquote><span style="color:blue;">str = dude.getName();</span></blockquote>
+<p>Using our example object, the above method call returns ( <span id="default" style="color:green;"></span> ). By supplying a type param (see valid types below) the method will return the name in that format.</p>
 <blockquote><span style="color:blue;">str = dude.getName(</span>type<span style="color:blue;">);</span></blockquote>
-<p>Types are a text string that uses single letters for initials (e.g., "f" for a first initial only), full words for spelled out words (e.g., "first-m-last" for first name and last name separated by an initial), and hyphens to designate spaces (e.g., "f-m-last" for last name preceded by initials but "fm-last" for same without space between initials). The following types are currently implemented:</p>
+<p>Types are a text string that uses single letters for initials (e.g., "f" for a first initial only), full words for spelled out words (e.g., "first-m-last" for first name and last name separated by an initial), and hyphens to designate spaces (e.g., "f-m-last" for last name preceded by initials but "fm-last" for same without space between initials). The following are currently valid types:</p>
 <ul>
 <li><p>"f" ( <span id="f" style="color:green;"></span> )</p></li>
 <li><p>"f-last" ( <span id="f-last" style="color:green;"></span> )</p></li>
@@ -79,14 +106,24 @@ function example(){
 </ul>
 </div>
 
-<br>
-
-<h3>Display Name</h3>
+<h3>The <em>setFirstGiven</em>, etc. Methods</h3>
 <div class="well">
-<p>xxx</p>
-<blockquote><span id="display1"></span></blockquote>
-<p>xxx</p>
-<blockquote><span id="display2"></span></blockquote>
+<p>[coming soon]</p>
+</div>
+
+<h3>The <em>setSurname</em> Method</h3>
+<div class="well">
+<p>[coming soon]</p>
+</div>
+
+<h3>The <em>setSuffix</em> Method</h3>
+<div class="well">
+<p>[coming soon]</p>
+</div>
+
+<h3>The <em>setDisplay</em> Method</h3>
+<div class="well">
+<p>[coming soon]</p>
 </div>
 
 <br>
