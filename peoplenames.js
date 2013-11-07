@@ -15,18 +15,33 @@ var Name = function(firstGiven,secondGiven,surname){
 	this.setNickname("");
 	this.isComplete = false;
 	this.isMononymous = false;
+	this.lexicalOrder = "western";
 	this.isWesternOrder = true;
 	this.isEasternOrder = false;
 	this.setAnonymizedText("[redacted]"); 
-	this.anonymizeFirstGiven = false;
-	this.anonymizeSecondGiven = false;
-	this.anonymizeThirdGiven = false;
-	this.anonymizeFourthGiven = false;
+	this.isAnonymizedFirstGiven = false;
+	this.isAnonymizedSecondGiven = false;
+	this.isAnonymizedThirdGiven = false;
+	this.isAnonymizedFourthGiven = false;
+	this.isAnonymizedSurname = false;
 };
 Name.prototype.getName = function(type){
 	switch(type){
 		case "f":
-			return this.firstGiven.substring(0,1)+".";
+			if (this.lexicalOrder === "western"){
+				if (this.isAnonymizedFirstGiven === false){
+					return this.firstGiven.substring(0,1)+".";
+				} else {
+					return this.anonymizedText;
+				}
+			}
+			if (this.lexicalOrder === "eastern"){
+				if (this.isAnonymizedSurname === false){
+					return this.surname.substring(0,1)+".";
+				} else {
+					return this.anonymizedText;
+				}
+			}
 			break;
 		case "f-last":
 			return this.firstGiven.substring(0,1)+"."+" "+this.surname;
@@ -50,7 +65,20 @@ Name.prototype.getName = function(type){
 			return this.firstGiven.substring(0,1)+"."+" "+this.secondGiven.substring(0,1)+"."+" "+this.surname.substring(0,1)+".";
 			break;
 		case "m":
-			return this.secondGiven.substring(0,1)+".";
+			if (this.lexicalOrder === "western"){
+				if (this.isAnonymizedSecondGiven === false){
+					return this.secondGiven.substring(0,1)+".";
+				} else {
+					return this.anonymizedText;
+				}
+			}
+			if (this.lexicalOrder === "eastern"){
+				if (this.isAnonymizedFirstGiven === false){
+					return this.firstGiven.substring(0,1)+".";
+				} else {
+					return this.anonymizedText;
+				}
+			}
 			break;
 		case "l":
 			return this.surname.substring(0,1)+".";
@@ -62,7 +90,20 @@ Name.prototype.getName = function(type){
 			return this.firstGiven+" "+this.surname;
 			break;
 		case "first-middle-last":
-			return this.firstGiven+" "+this.secondGiven+" "+this.surname;
+			if (this.lexicalOrder === "western"){
+				if (this.isAnonymizedSecondGiven === false){
+					return this.firstGiven+" "+this.secondGiven+" "+this.surname;
+				} else {
+					return this.anonymizedText;
+				}
+			}
+			if (this.lexicalOrder === "eastern"){
+				if (this.isAnonymizedFirstGiven === false){
+					return this.surname+" "+this.firstGiven+" "+this.secondGiven;
+				} else {
+					return this.anonymizedText;
+				}
+			}
 			break;
 		case "first-m-last":
 			return this.firstGiven+" "+this.secondGiven.substring(0,1)+"."+" "+this.surname;
@@ -189,12 +230,16 @@ Name.prototype.anonymizeFourthGiven = function(name){
 	this.FourthGiven = this.AnonymizedText;
 };
 Name.prototype.anonymizeAllGiven = function(name){
-	this.anonymizeFirstGiven = true;
-	this.FirstGiven = this.AnonymizedText;
-	this.anonymizeSecondGiven = true;
-	this.SecondGiven = this.AnonymizedText;
-	this.anonymizeThirdGiven = true;
-	this.ThirdGiven = this.AnonymizedText;
-	this.anonymizeFourthGiven = true;
-	this.FourthGiven = this.AnonymizedText;
+	this.isAnonymizedFirstGiven = true;
+	this.firstGiven = this.AnonymizedText;
+	this.isAnonymizedSecondGiven = true;
+	this.secondGiven = this.AnonymizedText;
+	this.isAnonymizeThirdGiven = true;
+	this.thirdGiven = this.AnonymizedText;
+	this.isAnonymizeFourthGiven = true;
+	this.fourthGiven = this.AnonymizedText;
+};
+Name.prototype.anonymizeSurname = function(name){
+	this.isAnonymizedSurname = true;
+	this.surname = this.AnonymizedText;
 };

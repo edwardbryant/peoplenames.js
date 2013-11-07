@@ -21,6 +21,13 @@ function example(){
 	document.getElementById("mononymous").innerHTML=ex.isMononymous;
 	document.getElementById("western-order").innerHTML=ex.isWesternOrder;
 	document.getElementById("eastern-order").innerHTML=ex.isEasternOrder;
+
+	document.getElementById("anonymized-text").innerHTML=ex.anonymizedText;
+	document.getElementById("anonymized-first-given").innerHTML=ex.isAnonymizedFirstGiven;
+	document.getElementById("anonymized-second-given").innerHTML=ex.isAnonymizedSecondGiven;
+	document.getElementById("anonymized-third-given").innerHTML=ex.isAnonymizedThirdGiven;
+	document.getElementById("anonymized-fourth-given").innerHTML=ex.isAnonymizedFourthGiven;
+	document.getElementById("anonymized-surname").innerHTML=ex.isAnonymizedSurname;
 	
 	document.getElementById("default").innerHTML=ex.getName();
 	document.getElementById("f").innerHTML=ex.getName("f");
@@ -46,6 +53,11 @@ function example(){
 
 	ex.setDisplay("fml");
 	document.getElementById("display2").innerHTML=ex.getName("display");
+
+	ex.setDisplay("first-m-last");
+	document.getElementById("display3").innerHTML=ex.getName("display");
+
+
 	
 }
 </script>	
@@ -67,6 +79,17 @@ function example(){
 <li><p>ex.isMononymous ( <span id="mononymous" style="color:green;"></span> )</p></li>
 <li><p>ex.isWesternOrder ( <span id="western-order" style="color:green;"></span> )</p></li>
 <li><p>ex.isEasternOrder ( <span id="eastern-order" style="color:green;"></span> )</p></li>
+</ul>
+
+<hr>
+
+<ul>
+<li><p>ex.anonymizedText ( <span id="anonymized-text" style="color:green;"></span> )</p></li>
+<li><p>ex.isAnonymzedFirstGiven ( <span id="anonymized-first-given" style="color:green;"></span> )</p></li>
+<li><p>ex.isAnonymzedSecondGiven ( <span id="anonymized-second-given" style="color:green;"></span> )</p></li>
+<li><p>ex.isAnonymzedThirdGiven ( <span id="anonymized-third-given" style="color:green;"></span> )</p></li>
+<li><p>ex.isAnonymzedFourthGiven ( <span id="anonymized-fourth-given" style="color:green;"></span> )</p></li>
+<li><p>ex.isAnonymzedSurname ( <span id="anonymized-surname" style="color:green;"></span> )</p></li>
 </ul>
 
 <hr>
