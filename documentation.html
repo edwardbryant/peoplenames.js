@@ -50,29 +50,45 @@ function example(){
 <h3>Object Creation</h3>
 <div class="well">
 <p>Create an object and supply three params (1) first given name, (2) second given name, and (3) surname.</p>
-<blockquote><span style="color:blue;">dude = new Name("Edward","Montgomery","Proundfoot");</span></blockquote>
+<blockquote>
+	<span style="color:blue;">dude = new Name("Edward","Montgomery","Proundfoot"); </span>
+	<span style="color:green;">// creates new name object</span>
+</blockquote>
+<p>To simplify the params needed for object creation, many properties are set to default values based on the most common use case. For example, that you would like name formatted with western lexical ordering (i.e., surname is last name, etc.) and that additional name components are not needed (e.g., third or fourth given names given names, name suffix). These defaults can be changed through additional method calls (discussed further below). For example, to create an name object for "Edward Montgomery Waldo Proudfoot, Jr." would require two additional method calls:</p>
+<blockquote>
+	<span style="color:blue;">dude.setThirdGiven("Waldo"); </span>
+	<span style="color:green;">// adds a third given name "Waldo"</span><br>
+	<span style="color:blue;">dude.setSuffix("Jr.");</span>
+	<span style="color:green;">// adds a name suffix of "Jr." for junior</span>
+</blockquote>
 </div>
 
 <h3>Object Properties</h3>
 <div class="well">
-<p>[NOTE: the object properties listed here are those currently only accessible during development. Some properties may not be in active use.]</p>
+<p>The object properties listed here are those currently accessible during development. Some properties may not be in active use and some may not remain accessible in a release version.</p>
+<h4>name components</h4>
 <ul>
-<li><p><em>hasFirstGiven</em> &middot; boolean on whether <em>firstGiven</em> has been set with a string greater than 0. Set during object creation.</p></li>
-<li><p><em>firstGiven</em> &middot; string of first given name.</p></li>
-<li><p><em>hasSecondGiven</em> &middot; boolean on whether <em>secondGiven</em> has been set with a string greater than 0. Set during object creation.</p></li>
-<li><p><em>secondGiven</em> &middot; string of second given name.</p></li>
-<li><p><em>hasThirdGiven</em> &middot; boolean on whether <em>thirdGiven</em> has been set with a string greater than 0. default is false.</p></li>
-<li><p><em>thirdGiven</em> &middot; string of third given name.</p></li>
-<li><p><em>hasFourthGiven</em> &middot; boolean on whether <em>fourthGiven</em> has been set with a string greater than 0. default is false.</p></li>
-<li><p><em>fourthGiven</em> &middot; string of fourth given name.</p></li>
-<li><p><em>hasSurname</em> &middot; boolean on whether <em>surname</em> has been set with a string greater than 0. Set during object creation.</p></li>
-<li><p><em>surname</em> &middot; string of surname (i.e., family name).</p></li>
-<li><p><em>hasSurname</em> &middot; boolean on whether <em>suffix</em> has been set with a string greater than 0. Set during object creation.</p></li>
-<li><p><em>suffix</em> &middot; string of name suffix (e.g., "Jr.", "Sr.", and ordinals such as "II").</p></li>
-<li><p><em>isComplete</em> &middot; boolean on whether the name elements which have been set comprise the complete name information. default is false.</p></li>
-<li><p><em>isMononymous</em> &middot; boolean on whether the person is represented by a single name (e.g., "Plato", "Cher"). default is false.</p></li>
-<li><p><em>isWesternOrder</em> &middot; boolean on whether western lexical ordering is to be used for return values. default is true.</p></li>
-<li><p><em>isEasternOrder</em> &middot; boolean on whether eastern lexical ordering is to be used for return values. default is false.</p></li>
+<li><p><em style="color:red;">firstGiven</em> &middot; string of first given name. Property contains empty string if not set.</p></li>
+<li><p><em style="color:red;">secondGiven</em> &middot; string of second given name. Property contains empty string if not set.</p></li>
+<li><p><em style="color:red;">thirdGiven</em> &middot; string of third given name. Property contains empty string if not set.</p></li>
+<li><p><em style="color:red;">fourthGiven</em> &middot; string of fourth given name. Property contains empty string if not set.</p></li>
+<li><p><em style="color:red;">surname</em> &middot; string of surname (<em>i.e.</em>, family name). Property contains empty string if not set.</p></li>
+<li><p><em style="color:red;">suffix</em> &middot; string of name suffix (<em>e.g.</em>, "Jr.", "Sr.", and ordinals such as "II"). Property contains empty string if not set.</p></li>
+</ul>
+<h4>name component status</h4>
+<ul>
+<li><p><em style="color:red;">hasFirstGiven</em> &middot; boolean on whether <em>firstGiven</em> has been set with a string greater than 0. Automatically set during object creation or when setFirstGiven method is called separately.</p></li>
+<li><p><em style="color:red;">hasSecondGiven</em> &middot; boolean on whether <em>secondGiven</em> has been set with a string greater than 0. Set during object creation.</p></li>
+<li><p><em style="color:red;">hasThirdGiven</em> &middot; boolean on whether <em>thirdGiven</em> has been set with a string greater than 0. default is false.</p></li>
+<li><p><em style="color:red;">hasFourthGiven</em> &middot; boolean on whether <em>fourthGiven</em> has been set with a string greater than 0. default is false.</p></li>
+<li><p><em style="color:red;">hasSurname</em> &middot; boolean on whether <em>surname</em> has been set with a string greater than 0. Set during object creation.</p></li>
+<li><p><em style="color:red;">hasSuffix</em> &middot; boolean on whether <em>suffix</em> has been set with a string greater than 0. default is false</p></li>
+</ul>
+<h4>name metadata</h4>
+<ul>
+<li><p><em style="color:red;">isComplete</em> &middot; boolean on whether the name elements which have been set comprise the complete name information. default is false.</p></li>
+<li><p><em style="color:red;">isMononymous</em> &middot; boolean on whether the person is represented by a single name (e.g., "Plato", "Cher"). default is false.</p></li>
+<li><p><em style="color:red;">lexicalOrder</em> &middot; string of lexical order used in name formatting (only valid values are "western" or "eastern"). default is "western".</p></li>
 </ul>
 </div>
 
@@ -104,11 +120,20 @@ function example(){
 <li><p>"last-first-middle" ( <span id="last-first-middle" style="color:green;"></span> )</p></li>
 <li><p>"last-first-m" ( <span id="last-first-m" style="color:green;"></span> )</p></li>
 </ul>
+<p><em>Lexical Ordering</em> &mdash; Name component terms used in the above types such as "first", "middle", and "last" refer to their commonly expected placement &mdash; i.e., they are dependent on which lexical ordering system is set (western or eastern). By default, ordering is set to "western" (<em>i.e.</em>, "first" refers to a person's first name, which in western name ordering is the first given name). However, please be aware that this will change if the ordering is changed to "eastern" (<em>i.e.</em>, under eastern ordering "first" would refer to a person's family name/surname).</p>
 </div>
 
 <h3>The <em>setFirstGiven</em>, etc. Methods</h3>
 <div class="well">
-<p>[coming soon]</p>
+<p>Calling the <em>setFirstName</em> or <em>setSecondName</em> method and supplying a param allows you to replace the existing firstGiven property with a new string value supplied as a param. Similarly, calling the <em>setThirdGiven</em> or <em>setFourthGiven</em> allows you to add or replace existing third or fourth given names with a supplied string value.</p>
+<blockquote>
+	<span style="color:blue;">dude.setFirstGiven("Edwin");</span> <span style="color:green;">// replaces "Edward" with "Edwin"</span><br>
+	<span style="color:blue;">dude.setThirdGiven("Waldo");</span> <span style="color:green;">// adds "Waldo" as a new  third given name</span>
+</blockquote>
+<p>If any of these methods are used to add a given name that was not previously set, the related boolean property will also be set (<em>e.g.</em>, adding a new third given name will change the hasThirdGiven property from false to true). If any of these methods are called with a missing param, a non-string value, or an empty string, the method will ignore the invalid param, set the property to an empty string and keep the related boolean property set to false &mdash; effectively unsetting the property. Thus, to remove a name component, use the above set methods to set to an empty string. For example:</p>
+<blockquote>
+	<span style="color:blue;">dude.setThirdGiven("");</span> <span style="color:green;">// removes "Waldo" as the third given name</span>
+</blockquote>
 </div>
 
 <h3>The <em>setSurname</em> Method</h3>
