@@ -1,9 +1,11 @@
-peoplenames.js
+
+PeopleNames.js 
 ==============
 
-a detailed JS object with methods for manipulating the names of people.
+Documentation for PeopleNames.js a framework for formatting and manipulating the names of people.
 
-created 10/30/2013
+created - 10/30/2013
+last updated - 11/11/2013 
 
 PURPOSE
 
